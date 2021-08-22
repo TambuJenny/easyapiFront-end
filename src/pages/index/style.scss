@@ -1,0 +1,169 @@
+
+
+.principal
+{
+ display: flex;
+ align-items: stretch;
+ height: 100vh;
+
+ main
+ {
+  background-color:rgb(28, 241, 177);
+  flex: 9;
+  display: flex;
+  flex-direction: column;
+  padding: 0% 5% 0;
+  justify-content: center;
+  text-align: center;
+ 
+  .title
+  {
+   h3
+   {
+    font-size: 15vh;
+    color: #fff;
+    margin: 0;
+   }
+   p
+   {
+     font-size: 2.8vh;
+     color:#fff;
+   }
+   img
+   {
+    max-width: 39vh;
+   }
+  }
+
+
+ }
+
+ aside
+ {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  padding: 0% 5% 0;
+  justify-content: center;
+
+  form
+  {
+     display: flex;
+     flex-direction: column;
+     padding: 0% 13% 0;
+
+     .center_session
+     {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin-bottom: 10vh;
+       p{
+       
+        position: relative;
+        top: 7vh;
+        color: #fff;
+        font-size:14px;
+        color:#fff;
+        margin:32px 0;
+
+       }
+       
+       
+     }
+
+     .down-desciption
+     {
+       display: flex;
+       justify-content:space-between;
+       
+       .div
+       {
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+         p
+         {
+           position: relative;
+           top: 25%;
+           color: #fff ;
+           font-size: 12px;
+           font-weight: 500;
+           padding: 0px 9px 0px ;
+           margin: 0;
+         }
+       }
+     }
+     .line
+     {
+      margin: 60px 0px 15px ;
+      border-top: 1px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      p{
+       font-size: 14px;
+       color: #fff;
+       font-weight: 500;
+      }
+     }
+
+     small
+     {
+      color: #fff;
+      font-weight: 500;
+     }
+
+  }
+ }
+ 
+
+}
+@media screen and (max-width:488px) 
+{
+  .principal
+  {
+    display: flex;
+    flex-direction: column;
+    main
+    {
+      height: 100vh;
+
+      .title
+      {
+        padding-top: 25%;
+        padding-bottom: 25%;
+        
+        img
+        {
+          margin-bottom: 25%;
+        }
+        h3
+        {
+          font-size: 50px;
+        }
+      }
+    }
+    aside
+    {
+      form
+      {
+        .center_session
+      {
+        p
+        {
+          font-size: 30px;
+        }
+      }
+      .down-desciption
+      {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      }
+    }
+  }
+}
