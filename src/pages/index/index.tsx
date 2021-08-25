@@ -1,9 +1,9 @@
 
-import './style.scss';
+import './indexstyle.scss';
 import {Input} from './../../components/input/Input'
 import {Checkbox} from './../../components/input/Input'
 import  Moom from './../../img/undraw_relaunch_day_902d.svg';
-export function Index()
+export default  function Index()
 {
   return (
      <div className="principal">

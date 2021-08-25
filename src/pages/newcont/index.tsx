@@ -1,13 +1,86 @@
+import { useEffect, useState } from "react"
+import api from "../../services/api"
+
 import { Input } from "../../components/input/Input"
 import './style.scss'
 
-export default function NewCont()
+interface produtoType {
+data:{
+  Category:{
+    data:[{
+     id:string,
+     name:string,
+     code:string
+    }]
+  },
+  Imagem:{
+      data:[{
+       id:string,
+       name:string,
+       path:string
+      }]
+  }
+  Product: {
+    data: [
+     {
+       id:string,
+       idCategory:string,
+       idImg:string,
+       name:string,
+       sku:string,
+       quantity:string,
+       price:string,
+       description:string,
+      }
+    ]
+  }
+}
+  
+  }
+
+
+
+export function Newcont()
 {
+  var jsonProduto ={
+   "obj":
+   {
+     "method":"select",
+     "data":
+     {
+       "Category":{},
+       "Imagem":{},
+       "Product":{}
+     }
+   }
+  } 
+  let teste = {}
+  const [produtos,setProdutos]=useState<produtoType>();
+  const getProdutos = async () =>{
+    await api.post('desafio/api/api',jsonProduto)
+            .then((response)=>{
+              setProdutos(response.data)
+            })
+            .catch((error)=>{
+              console.log(error)
+            });
+  }
+
+  useEffect(()=>{
+    getProdutos()
+  },[])
+
+  useEffect(()=>{
+    console.log(produtos?.data.Category)
+
+    produtos?.data.Category.data.map(category =>console.log(category.name))
+    
+  },[produtos])
 
  
  return(
    <div className="principal">
-      <main>
+      <main className="principal-item">
          <div className="title">
           <img src="" alt="" />
          <h3>Easy API</h3>
@@ -34,10 +107,16 @@ export default function NewCont()
          </div>
          
       </main>
-      <aside>
+      <aside className="new-account">
        <div className="principal_form">
         <div className="title-form">
         <h3> Criar Conta</h3>
+        {
+           produtos?.data.Category.data.map(category =>(
+            <h3>{category.name}</h3>
+           )
+           )
+        }
         </div>
 
         <form action="" >

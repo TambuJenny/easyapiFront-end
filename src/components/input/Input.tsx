@@ -1,7 +1,9 @@
 import './style.scss';
 type PropsInput={
   text?:string,
-  type?:string,
+  type?:string
+ 
+  
 
 
 }
