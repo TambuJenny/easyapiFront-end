@@ -1,11 +1,10 @@
 import Api from "./../services/api";
 
 //#region NewUser
-export interface newUserType{
+ interface newUserType{
   nome:string,
   pais:string,
   email:string,
-
   telefone:string,
   social1:string,
   social2:string,

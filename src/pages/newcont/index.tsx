@@ -3,6 +3,29 @@ import api from "../../services/api"
 //import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 import { Input } from "../../components/input/Input"
 import './style.scss'
+import {newcont} from './../requestPost';
+import DocumentIcon from './../../img/icons/icons8_Document_50px.png';
+import GithubIcon from './../../img/icons/icons8_GitHub_50px.png';
+import InfoIcon from './../../img/icons/icons8_Info_50px.png';
+import DonatIcon from './../../img/icons/icons8_Welfare_50px.png'
+
+
+interface newUserType{
+  nome:string,
+  pais:string,
+  email:string,
+
+  telefone:string,
+  social1:string,
+  social2:string,
+  social3:string,
+  social4:string
+
+}
+
+//const [dataNewCont,setdataNnewCont]=useState<newUserType>()
+//const response_status= newcont(newUserType);
+
 
 
 interface produtoType {
@@ -89,16 +112,24 @@ export function Newcont()
          <div className="menu">
            <ul>
               
-            <img src="" alt="" />  
+          <div className="menu_object" style={{display:"flex"}}>
+          <img src={DocumentIcon} alt="" style={{maxWidth:"30px"}}/>
             <li> <a href="" className="link-style"> Documentação </a></li>
-            <img src="" alt="" />
+          </div>
+           <div className="menu_object" >
+           <img src={GithubIcon} alt="" />
             <li> <a href="" className="link-style"> Github repositório </a></li>
+           </div>
            
-            <img src="" alt="" />
+           <div className="menu_object" >
+           <img src={DonatIcon} alt=""/>
             <li> <a href="" className="link-style"> Sobre nós </a></li>
+           </div>
            
-            <img src="" alt="" />
+           <div className="menu_object" >
+           <img src={InfoIcon} alt=""/>
             <li> <a href="" className="link-style"> Doação </a></li>
+           </div>
            
            
            </ul>

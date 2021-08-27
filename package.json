@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
     "cra-template-typescript": "1.1.2",
     "react": "^17.0.2",
