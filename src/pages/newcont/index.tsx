@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import api from "../../services/api"
-
+//import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 import { Input } from "../../components/input/Input"
 import './style.scss'
+
 
 interface produtoType {
 data:{
@@ -111,12 +112,12 @@ export function Newcont()
        <div className="principal_form">
         <div className="title-form">
         <h3> Criar Conta</h3>
-        {
+        {/*
            produtos?.data.Category.data.map(category =>(
-            <h3>{category.name}</h3>
+            <small>{category.name}</small>
            )
            )
-        }
+           */}
         </div>
 
         <form action="" >
