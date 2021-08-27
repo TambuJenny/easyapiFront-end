@@ -1,0 +1,45 @@
+.menutop
+{
+ height: 48px;
+ width: auto;
+ background-color: #7D52DA;
+ padding: 0px 5% 0px ;
+ display:  flex;
+ align-items: center;
+
+  .text-div
+  {
+     flex: 8;
+     h3
+     {
+      font-size: 1.35em;
+      color:white;
+      letter-spacing: 0.5px;
+     }
+  }
+  .menu-div
+  {
+   flex: 5;
+   ul{
+    display: flex;
+    justify-content: space-around;
+    
+    li{
+      display: flex;
+      align-items: center;
+      img
+      {
+        width: 30px;
+        padding: 0px 5px 5px ;
+      }
+     a{
+      font-weight: 500;
+      font-size: 15px;
+      color:white;
+     }
+    }
+   }
+  }
+
+
+}

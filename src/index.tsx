@@ -4,10 +4,11 @@ import App from './App';
 import Routes from './Routes';
 import {Newcont} from './pages/newcont';
 import './style/global.scss';
+import NewDataBase from './pages/datab/index'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Newcont />
+    <NewDataBase />
   </React.StrictMode>,
   document.getElementById('root')
 );

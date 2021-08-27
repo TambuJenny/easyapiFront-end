@@ -1,0 +1,37 @@
+.principal_divData
+{
+ p{
+  color: white;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 15px;
+ }
+
+  display: flex;
+  main{
+   flex:2;
+   height: 100vh;
+   background-color: #2AD0B2;
+  }
+  aside 
+  {
+   flex: 10;
+
+   .tables
+   {
+    padding: 10px 35px 10px;
+
+
+    .desc-db
+    {
+     display: flex;
+    
+      .spaceb
+      {
+       width: 45px;
+      }
+    }
+   }
+  }
+
+}

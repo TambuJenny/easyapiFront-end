@@ -1,7 +1,9 @@
 import './style.scss';
 type PropsInput={
   text?:string,
-  type?:string
+  type?:string,
+  size?:number,
+  height?:number
  
   
 
@@ -12,7 +14,13 @@ type PropsInput={
 export function Input (props:PropsInput)
 {
   return(
-   <input type={props.type || ''} className="input_text " placeholder={props.text || ""} />
+   <input type={props.type || ''} className="input_text " 
+   style={{
+     width:props.size,
+     height:props.height
+     
+  
+   }} placeholder={props.text || ""} />
   )
 
 }
