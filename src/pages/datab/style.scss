@@ -31,7 +31,50 @@
        width: 45px;
       }
     }
+
+    .tables-camp
+    {
+      margin-top: 3%;
+      width: auto;
+      height: 65vh;
+      border: 1px solid #7d52da;
+      border-radius: 1px;
+      overflow-y: scroll;
+      table{
+        border-spacing: 0;
+      
+        thead{
+         
+          .headiv
+          {
+            width: 100vh;
+          margin:0;
+          padding-left: 0;
+         
+          background-color: #7d52da;
+          height: 50px;
+        
+            tr{
+              
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                td
+                {
+                 width:calc( 100% / (var(tables-camp)) );
+                }
+                
+
+         
+            }
+          }
+        }
+      }
+    }
    }
   }
 
 }
+
+

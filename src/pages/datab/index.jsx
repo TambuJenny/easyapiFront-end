@@ -22,13 +22,30 @@ export default function NewDataBase()
              <div className="spaceb"></div>
              <div className="componente" >
              <p>Numeros das tabelas</p>
-              <Input text="Nome do banco de dados " height={29}/>
+              <Input text="Tabelas " type="number" height={29}/>
              </div>
              <div className="spaceb"></div>
              <div className="componente" >
              <p>Tabelas </p>
-              <Input text="Nome do banco de dados "  height={29}/>
+              <Input text="Pessoa "  height={29}/>
              </div>
+             </div>
+             <div className="tables-camp">
+                   <table>
+                           <thead>
+                                   <div className="headiv">
+                                   <tr>
+                                           <td ><p>Nº</p></td>
+                                           <td ><p>Campo</p></td>
+                                           <td><p>Tipo</p></td>
+                                           <td><p>Nul</p></td>
+                                           <td><p>Key</p></td>
+                                          
+                                   </tr>
+                                   </div>
+                           </thead>
+                           
+                        </table>     
              </div>
             </div>
   
