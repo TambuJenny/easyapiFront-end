@@ -35,7 +35,7 @@
     .tables-camp
     {
       margin-top: 3%;
-      width: auto;
+      width: 100%;
       height: 65vh;
       border: 1px solid #7d52da;
       border-radius: 1px;
@@ -48,10 +48,10 @@
           .headiv
           {
             width: 100vh;
-          margin:0;
-          padding-left: 0;
+            margin:0;
+            padding-left: 0;
          
-          background-color: #7d52da;
+          background-color: rgba(125,82,218, 0.3);
           height: 50px;
         
             tr{
@@ -62,7 +62,12 @@
 
                 td
                 {
-                 width:calc( 100% / (var(tables-camp)) );
+                  flex-grow: 500;
+                 text-align: center;
+                    p
+                    {
+                      font-weight: 500;
+                    }
                 }
                 
 

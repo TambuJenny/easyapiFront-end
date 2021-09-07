@@ -41,6 +41,7 @@ export default function NewDataBase()
                                            <td><p>Nul</p></td>
                                            <td><p>Key</p></td>
                                           
+                                          
                                    </tr>
                                    </div>
                            </thead>

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState,useCallback } from "react"
 import api from "../../services/api"
 //import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 import { Input } from "../../components/input/Input"
 import './style.scss'
-import {newcont} from './../requestPost';
+import {addMethod} from './../requestPost';
 import DocumentIcon from './../../img/icons/icons8_Document_50px.png';
 import GithubIcon from './../../img/icons/icons8_GitHub_50px.png';
 import InfoIcon from './../../img/icons/icons8_Info_50px.png';
@@ -28,58 +28,37 @@ interface newUserType{
 
 
 
-interface produtoType {
-data:{
-  Category:{
-    data:[{
-     id:string,
-     name:string,
-     code:string
-    }]
-  },
-  Imagem:{
-      data:[{
-       id:string,
-       name:string,
-       path:string
-      }]
-  }
-  Product: {
-    data: [
-     {
-       id:string,
-       idCategory:string,
-       idImg:string,
-       name:string,
-       sku:string,
-       quantity:string,
-       price:string,
-       description:string,
-      }
-    ]
-  }
+interface newPessoatype {
+  IdPais ?:string,
+  Nome :string,
+  Email ?:string,
+  password:string
 }
-  
-  }
 
 
-
-export function Newcont()
+export default function Newcont()
 {
-  var jsonProduto ={
-   "obj":
-   {
-     "method":"select",
-     "data":
-     {
-       "Category":{},
-       "Imagem":{},
-       "Product":{}
-     }
-   }
-  } 
+  const [dataUser, setDataUser]= useState<newPessoatype>();
+  
+ // setDataUser()
+ let objReturn= useCallback(()=>{
+    let obj = {
+      "IdPais":"1",
+      "Nome":dataUser?.Nome,
+      "Email":dataUser?.Email,
+      "password":dataUser?.password
+    }
+    return obj
+  },[dataUser])
+ 
+   async function getResultInsert (e:any) {
+   e.preventDefault(
+     console.log(objReturn),
+     teste = addMethod(objReturn,'add')
+   );
+   }  
   let teste = {}
-  const [produtos,setProdutos]=useState<produtoType>();
+ /* const [produtos,setProdutos]=useState<produtoType>();
   const getProdutos = async () =>{
     await api.post('desafio/api/api',jsonProduto)
             .then((response)=>{
@@ -88,18 +67,18 @@ export function Newcont()
             .catch((error)=>{
               console.log(error)
             });
-  }
+  }*/
 
   useEffect(()=>{
-    getProdutos()
+    //getProdutos()
   },[])
 
-  useEffect(()=>{
-    console.log(produtos?.data.Category)
+  //useEffect(()=>{
+    //console.log(produtos?.data.Category)
 
-    produtos?.data.Category.data.map(category =>console.log(category.name))
+   // produtos?.data.Category.data.map(category =>console.log(category.name))
     
-  },[produtos])
+  //},[produtos])
 
  
  return(
@@ -151,12 +130,15 @@ export function Newcont()
            */}
         </div>
 
-        <form action="" >
-          <div className="left">
+        <form onSubmit={getResultInsert} >
+         <div className="flex-form">
+         <div className="left">
           <small>Nome</small>
-           <Input text="Nome"/>
+           <Input  text="Nome"
+              
+           />
            <small>Senha</small>
-           <Input text="Senha"/>
+           <Input text="Senha"  value={dataUser?.password}/>
            <small>País</small>
            <Input text="País"/>
            <small>Cidade</small>
@@ -169,15 +151,17 @@ export function Newcont()
            <small>Rede social</small>
            <Input text="Rede social"/>
            <small>Rede social</small>
-           <Input text="Rede social"/>
+           <Input text="Emial" value={dataUser?.Email || ''}/>
            <small>GitHub</small>
            <Input text="Github"/>
           </div>
-        </form>
-        <div className="center-bottom">
+         </div>
+         <div className="center-bottom">
          <button className="btn_newcont" type="submit"> Criar Conta</button>
          <small>Copyright © 2021. All rights reserved. Wat Developer</small>
         </div>
+        </form>
+        
        </div>
       </aside>
    </div>

@@ -87,31 +87,37 @@
      form
      {
         padding-top: 5vh;
-        display: flex;
-        border-bottom: 1px solid #fff;
-        padding-bottom: 3%;
+        
+        
 
-        small
+        .flex-form
         {
-         color: #fff;
-         font-size: 15px;
-        }
-        .left
-        {
-         flex: 7;
+          padding-bottom: 3%;
+          border-bottom: 1px solid #fff;
           display: flex;
-          flex-direction: column;
+          small
+          {
+           color: #fff;
+           font-size: 15px;
+          }
+          .left
+          {
+           flex: 7;
+            display: flex;
+            flex-direction: column;
+          }
+          .space
+          {
+           width: 5%;
+          }
+          .rigth
+          {
+           flex: 7;
+            display: flex;
+            flex-direction: column;
+          }
         }
-        .space
-        {
-         width: 5%;
-        }
-        .rigth
-        {
-         flex: 7;
-          display: flex;
-          flex-direction: column;
-        }
+      
      }
     }
 
@@ -125,15 +131,15 @@
 
      .btn_newcont
      {
-        background-color: transparent;
-        border:1px solid #7700c7;
-        border-radius: 35px;
-        width: 450px;
-        padding: 15px 5px 15px ;
-        font-size: 18px;
-        color: #7700c7;
-        font-weight: 500;
-        align-items: center;
+      background-color: transparent;
+      border:1px solid #7700c7;
+      border-radius: 35px;
+      width: 450px;
+      padding: 15px 5px 15px ;
+      font-size: 18px;
+      color: #7700c7;
+      font-weight: 500;
+      align-items: center; 
      }
      small
      {
