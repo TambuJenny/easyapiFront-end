@@ -5,7 +5,8 @@ type PropsInput={
   type?:string,
   size?:number,
   height?:number,
-  value?:any,
+  value?:string,
+  required ?: boolean,
   onChange?:(a:any)=>any
   
 }
@@ -22,8 +23,12 @@ export function Input (props:PropsInput)
    style={{
      width:props.size,
      height:props.height
-     
-   }} placeholder={props.text || ""}   />
+     }} 
+   placeholder={props.text || ""}
+   type={props.type || ""}
+   required = {props.required || false }
+
+      />
   )
 
 }

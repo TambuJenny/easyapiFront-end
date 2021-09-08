@@ -4,14 +4,25 @@ import Api from "./../services/api";
 
 
 export async function addMethod(props:object,method:string){
+
+  console.log("testando :",props)
   var objNewUserJson={
     "obj":
     {
       "method":method,
       "data":
       {
-        props
-       }
+       "pessoa":[
+				{
+					"idPais":"1",
+					"nome":"Tambu",
+					"email":"Tambu@gmail.com",
+					"password":"Tambu"
+					
+				}
+			]
+      }
+       
     }
   }
   const request = await Api.post(
@@ -19,6 +30,6 @@ export async function addMethod(props:object,method:string){
     objNewUserJson
     
     )
-  return request.status
+  return request.data
 
 }

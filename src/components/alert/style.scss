@@ -1,0 +1,46 @@
+
+
+.CardAlert
+{
+ position: absolute;
+ top: 80%;
+ left: 73%;
+ height: auto;
+ width: 299px;
+ border: 1px solid #7D52DA;
+ color:white;
+ background-color:#7D52DA;
+ border-radius: 5px;
+ padding: 5px 15px 5px;
+ display: flex;
+ flex-direction: column;
+ .cardalertitle
+ {
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    h3{
+      padding-bottom: 1px;
+    }
+    button
+    {
+      max-height: 30px;
+      background-color: transparent;
+      border: 1px solid white ;
+      border-radius: 2.5px;
+      font-weight: 700;
+      color: white;
+      
+    }
+ }
+ .cardalertitlemessage
+ {
+   p
+   {
+     font-size: 0.9em;
+     
+     
+   }
+ }
+}

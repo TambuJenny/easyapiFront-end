@@ -8,24 +8,10 @@ import DocumentIcon from './../../img/icons/icons8_Document_50px.png';
 import GithubIcon from './../../img/icons/icons8_GitHub_50px.png';
 import InfoIcon from './../../img/icons/icons8_Info_50px.png';
 import DonatIcon from './../../img/icons/icons8_Welfare_50px.png'
-
-
-interface newUserType{
-  nome:string,
-  pais:string,
-  email:string,
-
-  telefone:string,
-  social1:string,
-  social2:string,
-  social3:string,
-  social4:string
-
-}
+import {Alert} from './../../components/alert/index'
 
 //const [dataNewCont,setdataNnewCont]=useState<newUserType>()
 //const response_status= newcont(newUserType);
-
 
 
 interface newPessoatype {
@@ -36,28 +22,44 @@ interface newPessoatype {
 }
 
 
+//const [nome,getnome]= useState()
+
+
+
+
 export default function Newcont()
 {
+  const [Nome,setNome]= useState('')
+  const [Email,setEmail]= useState('')
+  const [password,setpassword]= useState('') 
+  const [github,setgithub] = useState('')
+  //const [Pais,setPais] = useState('')
+  //const []
   const [dataUser, setDataUser]= useState<newPessoatype>();
   
- // setDataUser()
- let objReturn= useCallback(()=>{
+  
+
+ // Obj from add person
     let obj = {
-      "IdPais":"1",
-      "Nome":dataUser?.Nome,
-      "Email":dataUser?.Email,
-      "password":dataUser?.password
+      "pessoa":[
+        {
+          "IdPais":"1",
+          "nome":Nome,
+          "email":Email,
+          "password":password
+        }
+      ]
     }
-    return obj
-  },[dataUser])
- 
+       
+  let returnobj ={}
    async function getResultInsert (e:any) {
    e.preventDefault(
-     console.log(objReturn),
-     teste = addMethod(objReturn,'add')
+     console.log(obj),
+     returnobj = addMethod(obj,'add'),
+     console.log(returnobj)
    );
    }  
-  let teste = {}
+
  /* const [produtos,setProdutos]=useState<produtoType>();
   const getProdutos = async () =>{
     await api.post('desafio/api/api',jsonProduto)
@@ -75,19 +77,20 @@ export default function Newcont()
 
   //useEffect(()=>{
     //console.log(produtos?.data.Category)
-
    // produtos?.data.Category.data.map(category =>console.log(category.name))
-    
   //},[produtos])
+ 
 
  
  return(
+  
    <div className="principal">
       <main className="principal-item">
          <div className="title">
           <img src="" alt="" />
          <h3>Easy API</h3>
          </div>
+         <Alert title="Input vazio" body="Preenche o dado da Senha" bgcolor="#e30404" />
          <div className="menu">
            <ul>
               
@@ -129,16 +132,23 @@ export default function Newcont()
            )
            */}
         </div>
-
+            
         <form onSubmit={getResultInsert} >
          <div className="flex-form">
          <div className="left">
           <small>Nome</small>
-           <Input  text="Nome"
-              
+          
+           <Input text="Nome" 
+           type= "text"
+           value={Nome}
+           onChange = {e =>setNome(e.target.value)} 
            />
            <small>Senha</small>
-           <Input text="Senha"  value={dataUser?.password}/>
+           <Input text="Senha"
+            type="password" 
+            required ={true}
+            value={password}
+            onChange = {e =>setpassword(e.target.value) }/>
            <small>País</small>
            <Input text="País"/>
            <small>Cidade</small>
@@ -151,7 +161,11 @@ export default function Newcont()
            <small>Rede social</small>
            <Input text="Rede social"/>
            <small>Rede social</small>
-           <Input text="Emial" value={dataUser?.Email || ''}/>
+           <Input text="Email" 
+           type="Email"
+           value={Email}
+            onChange = {e => setEmail(e.target.value) }
+           />
            <small>GitHub</small>
            <Input text="Github"/>
           </div>
