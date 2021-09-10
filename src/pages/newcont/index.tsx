@@ -90,8 +90,7 @@ export default function Newcont()
           <img src="" alt="" />
          <h3>Easy API</h3>
          </div>
-         <Alert title="Input vazio" body="Preenche o dado da Senha" bgcolor="#e30404" />
-         <div className="menu">
+          <div className="menu">
            <ul>
               
           <div className="menu_object" style={{display:"flex"}}>

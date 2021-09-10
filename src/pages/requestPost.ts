@@ -12,15 +12,7 @@ export async function addMethod(props:object,method:string){
       "method":method,
       "data":
       {
-       "pessoa":[
-				{
-					"idPais":"1",
-					"nome":"Tambu",
-					"email":"Tambu@gmail.com",
-					"password":"Tambu"
-					
-				}
-			]
+        props
       }
        
     }
